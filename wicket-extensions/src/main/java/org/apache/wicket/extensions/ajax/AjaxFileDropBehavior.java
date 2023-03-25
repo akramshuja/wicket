@@ -19,8 +19,8 @@ package org.apache.wicket.extensions.ajax;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.fileupload2.FileItem;
-import org.apache.commons.fileupload2.FileUploadException;
+import org.apache.wicket.commons.fileupload2.FileItem;
+import org.apache.wicket.commons.fileupload2.FileUploadException;
 import org.apache.wicket.Component;
 import org.apache.wicket.WicketRuntimeException;
 import org.apache.wicket.ajax.AjaxEventBehavior;
@@ -97,11 +97,11 @@ public class AjaxFileDropBehavior extends AjaxEventBehavior
 			public CharSequence getPrecondition(Component component)
 			{
 				String css = getComponent().getString(DRAG_OVER_CLASS_KEY);
-				
+
 				return String.format("jQuery('#' + attrs.c).toggleClass('%s', attrs.event.type === 'dragover'); return (attrs.event.type === 'drop');", css);
 			}
 		});
-		
+
 		attributes.getDynamicExtraParameters()
 			.add(String.format(
 				"return Wicket.DataTransfer.getFilesAsParamArray(attrs.event.originalEvent, '%s');",
@@ -155,7 +155,7 @@ public class AjaxFileDropBehavior extends AjaxEventBehavior
 
 	/**
 	 * Set the maximum upload size.
-	 * 
+	 *
 	 * @param maxSize maximum size, must not be null
 	 */
 	public void setMaxSize(Bytes maxSize)
@@ -171,7 +171,7 @@ public class AjaxFileDropBehavior extends AjaxEventBehavior
 
 	/**
 	 * Set an optional maximum size per file.
-	 * 
+	 *
 	 * @param fileMaxSize maximum size for each uploaded file
 	 */
 	public void setFileMaxSize(Bytes fileMaxSize)
@@ -184,7 +184,7 @@ public class AjaxFileDropBehavior extends AjaxEventBehavior
 	 * <p>
 	 * Note: {@link #onError(AjaxRequestTarget, FileUploadException)} is called instead when
 	 * uploading failed
-	 * 
+	 *
 	 * @param target
 	 *            the current request handler
 	 * @param files
@@ -197,7 +197,7 @@ public class AjaxFileDropBehavior extends AjaxEventBehavior
 	/**
 	 * Hook method called to handle any error during uploading of the file.
 	 * <p>
-	 * Default implementation re-throws the exception. 
+	 * Default implementation re-throws the exception.
 	 *
 	 * @param target
 	 *            the current request handler

@@ -21,8 +21,8 @@ import java.util.Map;
 
 import jakarta.servlet.http.HttpServletRequest;
 
-import org.apache.commons.fileupload2.FileItem;
-import org.apache.commons.fileupload2.FileUploadException;
+import org.apache.wicket.commons.fileupload2.FileItem;
+import org.apache.wicket.commons.fileupload2.FileUploadException;
 import org.apache.wicket.protocol.http.IMultipartWebRequest;
 import org.apache.wicket.request.IRequestParameters;
 import org.apache.wicket.request.Url;
@@ -31,7 +31,7 @@ import org.apache.wicket.util.lang.Bytes;
 
 /**
  * Servlet specific WebRequest subclass for multipart content uploads.
- * 
+ *
  * @author Matej Knopp
  */
 public abstract class MultipartServletWebRequest extends ServletWebRequest
@@ -50,7 +50,7 @@ public abstract class MultipartServletWebRequest extends ServletWebRequest
 
 	/**
 	 * Construct.
-	 * 
+	 *
 	 * @param httpServletRequest
 	 * @param filterPrefix
 	 */
@@ -61,7 +61,7 @@ public abstract class MultipartServletWebRequest extends ServletWebRequest
 
 	/**
 	 * Construct.
-	 * 
+	 *
 	 * @param httpServletRequest
 	 * @param filterPrefix
 	 * @param url
