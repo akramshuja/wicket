@@ -96,7 +96,6 @@
 
 				return postbackForm;
 			},
-
 			/**
 			 * Populates and submits the special form.
 			 *
